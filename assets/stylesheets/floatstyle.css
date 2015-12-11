@@ -1,0 +1,48 @@
+code {
+	display: block;
+	background-color: green;
+	margin: 10px auto;
+	padding: 24px 0px;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+header,
+section,
+aside,
+footer {
+	margin: 0 1.5% 24px 1.5%;
+}
+footer {
+	margin-bottom: 0px;
+	clear: both;
+}
+section {
+	float: left;
+	width: 63%;
+}
+aside {
+	float: right;
+	width: 30%;
+}
+/*
+The following code dynamically creates html elements before and after an element with the class of group. The content is set to nothing with "" and are displayed as tables (similar to block level elements).
+The group class would ideally be a div who's only purpose is to create a container around a set of floats.
+The group:after is clearing the content before it, namely any amount of floated elements that need to be included in the flow of the page.
+	This allows multiple columns or floated elements to sit directly on the page, without having to clear every single element that comes after, "containing" the floats to their container.
+The group:after is clearing the container itself of any floats that may be above it that haven't been contained using this method.
+The *zoom: 1; is simply a trick/hack for older browsers to correctly display this code.
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+*/
